@@ -1,0 +1,12 @@
+[project]
+name = "pie-elm-forcing"
+version = "0.1.0"
+description = "Add your description here"
+readme = "README.md"
+requires-python = ">=3.12"
+dependencies = [
+    "netcdf4>=1.7.3",
+    "numpy>=2.3.5",
+    "pandas>=2.3.3",
+    "xarray>=2025.10.1",
+]
