@@ -44,6 +44,13 @@ tide_data_swapyears['tide_salinity'][tide_data_swapyears['time'].to_index().year
 tide_data_swapyears['tide_salinity'][tide_data_swapyears['time'].to_index().year==2022]=tide_data['tide_salinity'][tide_data['time'].to_index().year==2023].values
 tide_data_swapyears.to_netcdf('PIE_tide_forcing_swapyears.nc')
 
+tide_data_2323=tide_data.copy(deep=True)
+#tide_data_2323['tide_height'][tide_data_swapyears['time'].to_index().year==2023]=tide_data['tide_height'][tide_data['time'].to_index().year==2022].values
+tide_data_2323['tide_height'][tide_data_2323['time'].to_index().year==2022]=tide_data['tide_height'][tide_data['time'].to_index().year==2023].values
+#tide_data_2323['tide_salinity'][tide_data_swapyears['time'].to_index().year==2023]=tide_data['tide_salinity'][tide_data['time'].to_index().year==2022].values
+tide_data_2323['tide_salinity'][tide_data_2323['time'].to_index().year==2022]=tide_data['tide_salinity'][tide_data['time'].to_index().year==2023].values
+tide_data_2323.to_netcdf('PIE_tide_forcing_2323.nc')
+
 # Next we will set up the domain and surface files for this three grid cell configuration.
 # We start by opening the single column configuration files from the original one cell model simulation
 domain_onecol=xarray.open_dataset('domain_PIE_onecol.nc')
